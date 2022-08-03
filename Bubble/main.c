@@ -8,8 +8,8 @@
 #define CENTER_Y 20
 #define CENTER_X 30
 
-int num_data[5] = {2, 3, 1, 5, 4};
-int num_now;
+int num_data[5] = {1, 3, 2, 5, 4};
+int length = 0;
 
 int x = CENTER_X, y = CENTER_Y;
 
@@ -21,28 +21,42 @@ void histogram(int num) {
         usleep(30000);
         y--;
     }
+    
+}
+
+void display() {
+    for (int f=0; f<5; f++) {
+        x = x+10;
+        histogram(num_data[f]);
+    }
 }
 
 
 int main() {
-    
+    length = sizeof(num_data) / sizeof(int); 
+    printf("[NUM_LEN](%d)\n", length);
+    printf("[OUT_NOW](%d, %d, %d, %d, %d)\n", num_data[0], num_data[1], num_data[2], num_data[3], num_data[4]);
+    sleep(1);
+
     initscr();
     noecho();
     curs_set(FALSE);
 
-    for (int i=1; i<5; i++) {
-        for (int j=0; j<5; j++) {
+    display();
+    x = CENTER_X;
+    sleep(1);
+    clear();
+
+    for (int i=1; i<length; i++) {
+        for (int j=0; j<length; j++) {
             if (num_data[i] < num_data[j]) {
-                num_now = num_data[i];
+                int temp;
+                temp = num_data[i];
                 num_data[i] = num_data[j];
-                num_data[j] = num_now;
+                num_data[j] = temp;
             }
-            // printf("[OUT](%d, %d, %d, %d, %d)\n", num_data[0], num_data[1], num_data[2], num_data[3], num_data[4]);
         }
-        for (int f=0; f<5; f++) {
-            x = x+10;
-            histogram(num_data[f]);
-        }
+        display();
         x = CENTER_X;
         sleep(1);
         clear();
@@ -53,6 +67,8 @@ int main() {
     sleep(1);
 
     endwin();
+    
+    printf("[OUT_NEW](%d, %d, %d, %d, %d)\n", num_data[0], num_data[1], num_data[2], num_data[3], num_data[4]);
 
     return 0;
 }
