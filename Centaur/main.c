@@ -91,15 +91,14 @@ int main() {
         fs_c_pos[0] = axis_xy(c_x, fs_c_v_x);
         fs_c_pos[1] = axis_xy(c_y, fs_c_v_y);
 
-        /*
+
         printf("(a)[X: %e||Y: %e]\n", fs_a_pos[0], fs_a_pos[1]);
         printf("(b)[X: %e||Y: %e]\n", fs_b_pos[0], fs_b_pos[1]);
         printf("(c)[X: %e||Y: %e]\n", fs_c_pos[0], fs_c_pos[1]);
-        */
 
-        printf("(r)[ab:%e||ac:%e||bc:%e]]\n", r_ab, r_ac, r_bc);
+        printf("(r)[ab:%e||ac:%e||bc:%e]]\n\n", r_ab, r_ac, r_bc);
 
-        if (i > 2) {
+        if (i > 10) {
             break;
         }
         i++;
