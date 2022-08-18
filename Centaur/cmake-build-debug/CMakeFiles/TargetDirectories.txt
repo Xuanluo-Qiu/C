@@ -1,0 +1,3 @@
+/Users/cuisanjin/Desktop/Centaur/cmake-build-debug/CMakeFiles/Centaur.dir
+/Users/cuisanjin/Desktop/Centaur/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/cuisanjin/Desktop/Centaur/cmake-build-debug/CMakeFiles/rebuild_cache.dir
