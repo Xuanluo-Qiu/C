@@ -36,7 +36,7 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = /Users/cuisanjin/Desktop/Centaur/cmake-build-debug/
+cmake_ninja_workdir = /Users/cuisanjin/Desktop/C/Centaur/cmake-build-debug/
 # =============================================================================
 # Object build statements for EXECUTABLE target Centaur
 
@@ -46,7 +46,7 @@ cmake_ninja_workdir = /Users/cuisanjin/Desktop/Centaur/cmake-build-debug/
 
 build cmake_object_order_depends_target_Centaur: phony || CMakeFiles/Centaur.dir
 
-build CMakeFiles/Centaur.dir/main.c.o: C_COMPILER__Centaur_Debug /Users/cuisanjin/Desktop/Centaur/main.c || cmake_object_order_depends_target_Centaur
+build CMakeFiles/Centaur.dir/main.c.o: C_COMPILER__Centaur_Debug /Users/cuisanjin/Desktop/C/Centaur/main.c || cmake_object_order_depends_target_Centaur
   DEP_FILE = CMakeFiles/Centaur.dir/main.c.o.d
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu11
   OBJECT_DIR = CMakeFiles/Centaur.dir
@@ -76,7 +76,7 @@ build Centaur: C_EXECUTABLE_LINKER__Centaur_Debug CMakeFiles/Centaur.dir/main.c.
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/cuisanjin/Desktop/Centaur/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /Users/cuisanjin/Desktop/C/Centaur/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -87,7 +87,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/cuisanjin/Desktop/Centaur/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/cuisanjin/Desktop/Centaur -B/Users/cuisanjin/Desktop/Centaur/cmake-build-debug
+  COMMAND = cd /Users/cuisanjin/Desktop/C/Centaur/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/cuisanjin/Desktop/C/Centaur -B/Users/cuisanjin/Desktop/C/Centaur/cmake-build-debug
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -103,7 +103,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 
 #############################################
-# Folder: /Users/cuisanjin/Desktop/Centaur/cmake-build-debug
+# Folder: /Users/cuisanjin/Desktop/C/Centaur/cmake-build-debug
 
 build all: phony Centaur
 

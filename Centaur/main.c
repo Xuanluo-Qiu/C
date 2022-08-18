@@ -1,10 +1,9 @@
 #include <stdio.h>
 #include <math.h>
 
+int i = 0;
 // 引力常数
-double G = 1;
-// 刷新率
-double dt = 0;
+double G = 6.67E-11;
 // 步长
 double t = 0.5;
 
@@ -35,13 +34,13 @@ double axis_xy(double axis, double v) {
 
 int main() {
     // 恒星质量
-    int fs_a_m = 15;
-    int fs_b_m = 12;
-    int fs_c_m = 8;
+    int fs_a_m = 100000;
+    int fs_b_m = 120000;
+    int fs_c_m = 80000;
     // 恒星位置
-    double fs_a_pos[] = {30, 50};
-    double fs_b_pos[] = {-10, -20};
-    double fs_c_pos[] = {-10, -15};
+    double fs_a_pos[] = {3000, 50};
+    double fs_b_pos[] = {-1000, -20};
+    double fs_c_pos[] = {-1000, -15};
     // 恒星初速度
     double fs_a_v_x = 0;
     double fs_b_v_x = 0;
@@ -91,14 +90,19 @@ int main() {
         fs_a_v_y = v(fs_c_v_y);
         fs_c_pos[0] = axis_xy(c_x, fs_c_v_x);
         fs_c_pos[1] = axis_xy(c_y, fs_c_v_y);
-        
-        dt++;
-        if (dt == 1000) {
-            printf("(a)[X: %e||Y: %e]\n", fs_a_pos[0], fs_a_pos[1]);
-            printf("(b)[X: %e||Y: %e]\n", fs_b_pos[0], fs_b_pos[1]);
-            printf("(c)[X: %e||Y: %e]\n", fs_c_pos[0], fs_c_pos[1]);
-            dt = 0;
+
+        /*
+        printf("(a)[X: %e||Y: %e]\n", fs_a_pos[0], fs_a_pos[1]);
+        printf("(b)[X: %e||Y: %e]\n", fs_b_pos[0], fs_b_pos[1]);
+        printf("(c)[X: %e||Y: %e]\n", fs_c_pos[0], fs_c_pos[1]);
+        */
+
+        printf("(r)[ab:%e||ac:%e||bc:%e]]\n", r_ab, r_ac, r_bc);
+
+        if (i > 2) {
+            break;
         }
+        i++;
 
     }
     

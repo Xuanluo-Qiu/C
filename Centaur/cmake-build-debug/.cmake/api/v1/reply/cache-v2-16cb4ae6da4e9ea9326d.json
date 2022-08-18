@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/cuisanjin/Desktop/Centaur/cmake-build-debug"
+			"value" : "/Users/cuisanjin/Desktop/C/Centaur/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -419,7 +419,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/cuisanjin/Desktop/Centaur"
+			"value" : "/Users/cuisanjin/Desktop/C/Centaur"
 		},
 		{
 			"name" : "CMAKE_INSTALL_NAME_TOOL",
@@ -991,7 +991,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/cuisanjin/Desktop/Centaur/cmake-build-debug"
+			"value" : "/Users/cuisanjin/Desktop/C/Centaur/cmake-build-debug"
 		},
 		{
 			"name" : "Centaur_IS_TOP_LEVEL",
@@ -1015,7 +1015,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/cuisanjin/Desktop/Centaur"
+			"value" : "/Users/cuisanjin/Desktop/C/Centaur"
 		}
 	],
 	"kind" : "cache",
