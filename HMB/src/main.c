@@ -43,7 +43,7 @@ int main()
         char block[] = "[(--)]";
         for (int i = 0; i < 30; i++) {
             mvprintw(y, x, block);
-            mvprintw(y - 1, x, "  %d   ", x_d);
+            mvprintw(y - 1, x, "      ");
             refresh();
             usleep(30000);
             y++;
