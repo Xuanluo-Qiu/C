@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/Users/cuisanjin/Desktop/C/Centaur/build",
+  "command": "/usr/bin/clang   -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu11 -o CMakeFiles/Centaur.dir/main.c.o -c /Users/cuisanjin/Desktop/C/Centaur/main.c",
+  "file": "/Users/cuisanjin/Desktop/C/Centaur/main.c"
+}
+]
