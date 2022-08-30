@@ -17,3 +17,8 @@ Bz2_sw:
 	cc   -lncurses  Bz2_sw.c   -o Bz2_sw
 	./Bz2_sw
 	rm Bz2_sw
+
+Bz1_sw:
+	cc   -lncurses  Bz1_sw.c   -o Bz1_sw
+	./Bz1_sw
+	rm Bz1_sw

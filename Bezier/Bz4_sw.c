@@ -28,7 +28,6 @@ int main()
     mvprintw(P0[1]+10, P0[0]+10, "@");
     mvprintw(P1[1]+10, P1[0]+10, "@");
     mvprintw(P2[1]+10, P2[0]+10, "@");
-    mvprintw(P3[1]+10, P3[0]+10, "@");
     refresh();
 
     sleep(5);
