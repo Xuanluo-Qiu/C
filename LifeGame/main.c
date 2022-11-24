@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <unistd.h>
 
 // 地图数据
 int map_data[12][12];
@@ -83,9 +84,16 @@ void lod_world() {
 int main() {
     // 加载世界数据
     lod_data();
-    for (int i=0; i<2; i++) {
+    for (int i=0; i<3; i++) {
         // 进行判定
         control();
+        // 渲染
+        lod_world();
+        sleep(1);
+        // 清屏
+        // printf("\33[2J \033[0m");
     }
     lod_world();
+
+    return 0;
 }
