@@ -93,7 +93,8 @@ int main() {
         // 清屏
         // printf("\33[2J \033[0m");
     }
-    lod_world();
+    // 使用清屏时打开
+    // lod_world();
 
     return 0;
 }
