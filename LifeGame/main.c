@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <unistd.h>
 
 // 地图数据
 int map_data[12][12];
@@ -74,7 +73,12 @@ void lod_world() {
     printf("\n");
     for (int i = 0; i < 12; i++) {
         for (int j = 0; j < 12; j++) {
-            printf("[%d]", map_data[i][j]);
+            if (map_data[i][j] == 1) {
+                printf("\033[47m   \033[0m");
+            } else {
+                printf("  ");
+            }
+            //printf("[%d]", map_data[i][j]);
         }
         printf("\n");
     }
@@ -84,17 +88,11 @@ void lod_world() {
 int main() {
     // 加载世界数据
     lod_data();
+    // 更改次数
     for (int i=0; i<3; i++) {
         // 进行判定
         control();
-        // 渲染
-        lod_world();
-        sleep(1);
-        // 清屏
-        // printf("\33[2J \033[0m");
     }
-    // 使用清屏时打开
-    // lod_world();
-
+    lod_world();
     return 0;
 }
