@@ -8,7 +8,7 @@ void lod_data() {
     // 初始化地图
     for (int i = 0; i < 12; i++) {
         for (int j = 0; j < 12; j++) {
-            map_data[j][i] = 0;
+            map_data[i][j] = 0;
         }
     }
     // 初始化生命数据
@@ -19,80 +19,72 @@ void lod_data() {
     map_data[2][2] = 1;
 }
 
-// 游戏逻辑
 void control() {
-    // 设定变量储存周边生命
-    int state_data;
+    int _map[12][12];
+    for (int i = 0; i < 12; i++) {
+        for (int j = 0; j < 12; j++) {
+            _map[i][j] = map_data[i][j];
+        }
+    }
     // 遍历地图
     for (int i = 0; i < 12; i++) {
         for (int j = 0; j < 12; j++) {
+            // 设定变量储存周边生命
+            int state = 0;
             // 探测生命
-            if (map_data[i+1][j] == 1) {
-                state_data++;
+            if (!(i==0 || j==0)) {
+                state = state + map_data[i - 1][j - 1];
             }
-            if (map_data[i-1][j] == 1) {
-                state_data++;
+            if (!(i==0)) {
+                state = state + map_data[i - 1][j];
             }
-            if (map_data[i][j-1] == 1) {
-                state_data++;
+            if (!(i==0 || j==11)) {
+                state = state + map_data[i - 1][j + 1];
             }
-            if (map_data[i][j+1] == 1) {
-                state_data++;
+            if (!(j==0)) {
+                state = state + map_data[i][j - 1];
             }
-            if (map_data[i+1][j+1] == 1) {
-                state_data++;
+            if (!(j==11)) {
+                state = state + map_data[i][j + 1];
             }
-            if (map_data[i+1][j-1] == 1) {
-                state_data++;
+            if (!(i==11 || j==0)) {
+                state = state + map_data[i + 1][j - 1];
             }
-            if (map_data[i-1][j+1] == 1) {
-                state_data++;
+            if (!(i==11)) {
+                state = state + map_data[i + 1][j];
             }
-            if (map_data[i-1][j-1] == 1) {
-                state_data++;
+            if (!(i==11 || j==11)) {
+                state = state + map_data[i + 1][j + 1];
             }
 
-            // 决定生死
-            if (state_data >= 3) {
-                if (map_data[i][j] == 0) {
-                    map_data[i][j] = 1;
-                } else {
-                    map_data[i][j] = 0;
-                }
-            } else {
-                map_data[i][j] = 1;
+            if (state > 3 || state < 2) {
+                _map[i][j] = 0;
+            } else if (state == 3) {
+                _map[i][j] = 1;
             }
-            // 重制数据
-            state_data = 0;
-        }
-    }
-}
 
-// 渲染世界
-void lod_world() {
-    printf("\n");
-    for (int i = 0; i < 12; i++) {
-        for (int j = 0; j < 12; j++) {
-            if (map_data[i][j] == 1) {
-                printf("\033[47m   \033[0m");
+            if (_map[i][j] == 1) {
+                printf("\033[47m  \033[0m");
             } else {
-                printf("  ");
+                printf(" ");
             }
-            //printf("[%d]", map_data[i][j]);
         }
         printf("\n");
     }
-    printf("\n");
+    for (int i = 0; i < 12; i++) {
+        for (int j = 0; j < 12; j++) {
+            map_data[i][j] = _map[i][j];
+        }
+    }
 }
 
 int main() {
-    // 加载世界数据
     lod_data();
-    // 更改次数
-    for (int i=0; i<3; i++) {
-        // 进行判定
+    printf("Control+C == Exit\n\n");
+    while(1) {
         control();
+        getchar();
+        printf("\33[2J \033[0m");
     }
-    lod_world();
     return 0;
 }
