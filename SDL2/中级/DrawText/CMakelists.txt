@@ -1,0 +1,25 @@
+cmake_minimum_required(VERSION 3.23.2)
+project(DrewText C)
+
+set(CMAKE_C_STANDARD 11)
+
+# SDL2
+set(SDL_DIR /usr/local/Cellar/sdl2/2.26.0)
+include_directories(${SDL_DIR}/include/SDL2)
+link_directories(${SDL_DIR}/lib/)
+# SDL2_image
+set(SDL2_image /usr/local/Cellar/sdl2_image/2.6.2)
+include_directories(${SDL2_image}/include/)
+link_directories(${SDL2_image}/lib/)
+# SDL2_ttf
+set(SDL2_ttf /usr/local/Cellar/sdl2_ttf/2.20.1)
+include_directories(${SDL2_ttf}/include/)
+link_directories(${SDL2_ttf}/lib/)
+
+link_libraries(SDL2)
+link_libraries(SDL2_image)
+link_libraries(SDL2_ttf)
+
+# 把可执行文件移出来,防止找不到资源
+set(EXECUTABLE_OUTPUT_PATH ../)
+add_executable(DrewText main.c)
